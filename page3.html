@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reasons I Love You ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+overflow-x:hidden;
+}
+
+.container{
+width:100%;
+max-width:500px;
+text-align:center;
+}
+
+h1{
+color:white;
+margin-bottom:25px;
+font-size:34px;
+}
+
+.card{
+background:rgba(255,255,255,.2);
+backdrop-filter:blur(15px);
+padding:18px;
+margin:15px 0;
+border-radius:18px;
+color:white;
+font-size:18px;
+opacity:0;
+transform:translateY(20px);
+animation:show .8s forwards;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.card:nth-child(2){animation-delay:.4s;}
+.card:nth-child(3){animation-delay:.8s;}
+.card:nth-child(4){animation-delay:1.2s;}
+.card:nth-child(5){animation-delay:1.6s;}
+.card:nth-child(6){animation-delay:2s;}
+
+@keyframes show{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+button{
+margin-top:30px;
+padding:15px 35px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d6d;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.heart{
+position:fixed;
+color:white;
+font-size:20px;
+animation:float 8s linear infinite;
+pointer-events:none;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Reasons I Love You ❤️</h1>
+
+<div class="card">😊 Your beautiful smile</div>
+
+<div class="card">🌸 Your kind heart</div>
+
+<div class="card">🎵 Your cute voice</div>
+
+<div class="card">🥹 The way you care for me</div>
+
+<div class="card">❤️ Because you are simply YOU</div>
+
+<button onclick="nextPage()">Continue ➜</button>
+
+</div>
+
+<script>
+
+function nextPage(){
+window.location.href="page4.html";
+}
+
+function createHeart(){
+
+const h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤";
+
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(15+Math.random()*20)+"px";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+h.remove();
+},8000);
+
+}
+
+setInterval(createHeart,500);
+
+</script>
+
+</body>
+</html>
