@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Promise ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#f6d365,#fda085);
+overflow:hidden;
+padding:20px;
+}
+
+.container{
+width:100%;
+max-width:600px;
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(15px);
+padding:35px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+h1{
+color:white;
+margin-bottom:25px;
+font-size:36px;
+}
+
+.promise{
+background:rgba(255,255,255,.25);
+padding:15px;
+margin:15px 0;
+border-radius:15px;
+color:white;
+font-size:18px;
+opacity:0;
+transform:translateY(30px);
+animation:show .8s forwards;
+}
+
+.promise:nth-child(2){animation-delay:.4s;}
+.promise:nth-child(3){animation-delay:.8s;}
+.promise:nth-child(4){animation-delay:1.2s;}
+.promise:nth-child(5){animation-delay:1.6s;}
+
+@keyframes show{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+button{
+margin-top:30px;
+padding:15px 35px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.heart{
+position:absolute;
+font-size:22px;
+color:white;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{opacity:1;}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>My Promise ❤️</h1>
+
+<div class="promise">🤝 I promise to listen to you more.</div>
+
+<div class="promise">🌸 I promise to respect your feelings.</div>
+
+<div class="promise">💖 I promise to make you smile every day.</div>
+
+<div class="promise">❤️ I promise to never stop choosing you.</div>
+
+<button onclick="nextPage()">One Last Surprise 🎁</button>
+
+</div>
+
+<script>
+
+function nextPage(){
+window.location.href="page6.html";
+}
+
+function heart(){
+
+const h=document.createElement("div");
+
+h.className="heart";
+h.innerHTML="❤";
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(15+Math.random()*20)+"px";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+h.remove();
+},8000);
+
+}
+
+setInterval(heart,400);
+
+</script>
+
+</body>
+</html>
